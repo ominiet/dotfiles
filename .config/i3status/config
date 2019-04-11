@@ -1,0 +1,25 @@
+general {
+        output_format = "i3bar"
+        colors = true
+        interval = 1
+}
+
+order += "disk /"
+order += "ethernet enp24s0"
+order += "cpu_temperature 0"
+order += "tztime local"
+
+ethernet enp24s0 {
+        # if you use %speed, i3status requires the cap_net_admin capability
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+tztime local{
+        format = "%I:%M:%S%P %m/%d/%Y" 
+}
+
+
+disk "/" {
+        format = "%free"
+}
